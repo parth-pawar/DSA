@@ -1,1 +1,11 @@
+Problem Statement : Write a program that takes a character as input and prints 1, 0, or -1 according to the following rules.
+
+1, if the character is an uppercase alphabet (A - Z).
+0, if the character is a lowercase alphabet (a - z).
+-1, if the character is not an alphabet.
+
+Hint: sc.next() - stops at the first whitespace
+      sc.nextLine() - stops only at the end of the line
+Both of the above are Scanner methods 
+      charAt(index) - pulls out a specific character from the specified index. Its a string method
 
