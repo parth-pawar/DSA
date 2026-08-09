@@ -1,0 +1,29 @@
+Problem Statement :
+Given a number x, the task is to print the numbers from x to 0 in decreasing order in a single line.
+
+Example:
+Input: x = 3
+Output: 3 2 1 0
+Explanation: Numbers in decreasing order from 3 are 3 2 1 0.
+
+
+
+
+Solution :
+
+import java.util.*;
+
+class Solution {
+    public static void utility(int x) {
+        while (x >= 0) {
+            System.out.print(x + " ");
+            x--;
+        }
+    }
+
+    // Explicit main method required for local execution
+    public static void main(String[] args) {
+        utility(5); // Testing the method with x = 5
+    }
+}
+
