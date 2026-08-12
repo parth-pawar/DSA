@@ -1,0 +1,43 @@
+Pass by value and pass by reference are two different ways a computer program passes data into a function.
+
+Pass by Value : When you pass a variable by value, the system makes a copy of the variable's actual data. 
+It sends that copy into the function. Changes made inside the function do not affect the original variable outside the function.
+
+Pass by Reference : When you pass a variable by reference, the system does not copy the data. Instead, it passes a link or 
+pointer to the exact memory location where the original variable lives.Changes made inside the function will immediately 
+change the original variable outside the function.
+
+Java is strictly pass-by-value only. There is absolutely no pass-by-reference in Java. For primitives, it copies the value.
+
+For objects, it copies the address value. The variable does not hold the object itself. 
+It holds a reference (the memory address or "pointer") to where the object lives.
+Variable list holds the address 0xABC123 (the location of the object).
+When passed to a method, Java copies that address (0xABC123).
+You now have two separate variables holding the exact same address.
+
+Problem Statement: Geek is learning about functions and calling a function with arguments. 
+He learns that passing can take one of two forms: pass by value or pass by reference.
+
+Geek wishes to add 1 and 2, respectively, to the parameter passed by value and reference. Help Geek in fulfilling his goal.
+You don't need to read input or print anything. Your task is to complete the function passedBy() which takes a and b as 
+input parameters and returns array of two required integers.
+Example 1:
+
+Input:
+a = 1
+b = 2
+Output:
+2 4
+
+
+Solution :
+
+class Solution {
+    static int[] passedBy(int a, int b) {
+        
+        return new int[]{a+1,b+2};
+        
+    }
+}
+
+Explanation: 1 was passed by value whereas 2 passed by reference.
