@@ -1,0 +1,73 @@
+Time Complexity - Rate at which time taken increases with respect to input size.
+Time complexity is how fast an algorithm runs as the input size grows.
+It does not measure time in seconds. Instead, it counts the number of operations or steps. 
+This helps developers predict if code will slow down with large amounts of data.
+
+Calculate tc always in terms of worst case scenarios, avoid lower values and constants.
+
+Why Time Complexity Matters: 
+Predicts Performance: Helps you know if code will crash on big data.
+Compares Code: Shows which solution is most efficient.
+Hardware Independent: Measures logic, not the speed of your computer.
+
+
+Big-Oh notation - used for worst case time complexity
+Theta notation - used for average time complexity
+Omega notation - used for best case time complexity
+
+
+1) O(n^2): Quadratic Time complexity means the number of steps increases exponentially as the input size grows. 
+If your data size doubles, the program takes four times longer to run.
+
+The easiest way to see is two standard loops where the inner loop runs completely for every step of the outer loop.
+
+eg1: 
+
+    // Outer loop runs 'n' times
+    for (let i = 0; i < n; i++) {
+        
+        // Inner loop also runs 'n' times
+        for (let j = 0; j < n; j++) {
+            
+            // This runs n * n times total
+            // code
+        }
+    }
+
+
+eg2: 
+
+
+    // Outer loop runs 'n' times
+    for (let i = 0; i < n; i++) {
+        
+        // Inner loop runs 'i' times (grows larger with each outer turn)
+        for (let j = 0; j < i; j++) {
+            
+            // Basic operation
+        }
+    }
+
+Let us trace how many times the inner loop runs if n = 5:
+When i = 0: Inner loop runs from j = 0 to j < 0 → 0 times
+When i = 1: Inner loop runs from j = 0 to j < 1 → 1 time
+When i = 2: Inner loop runs from j = 0 to j < 2 → 2 times
+When i = 3: Inner loop runs from j = 0 to j < 3 → 3 times
+When i = 4: Inner loop runs from j = 0 to j < 4 → 4 times
+
+If you add up all the steps, you get the sum of the first n-1 integers:
+{Total Steps}=0+1+2+3+4+...+(n-1)
+Formula = n(n-1)/2  = n^2-n/2
+In Big O notation, we only care about the fastest-growing term and drop all constants:
+Drop the division by 2: → n² - n
+Drop the lower-order term (-n): → n²
+
+
+Space Complexity : Space complexity is the total amount of memory space an algorithm uses relative to the input size.
+
+Space complexity includes two main parts:
+i) Fixed Space (Base Space): Memory that stays the same regardless of input size. This includes constants, simple variables,
+and the code itself. Space you take to store inputs.
+
+ii) Auxiliary Space: Extra or temporary memory allocated by the algorithm to solve the problem. 
+Big O notation usually focuses on this space. Space you take to solve the problem
