@@ -1,0 +1,30 @@
+Problem Statement :Sam is making a forest visualizer. 
+An N-dimensional forest is represented by the pattern of size NxN filled with ‘*’.
+An N/2-dimensional forest is represented by the lower triangle of the pattern filled with ‘*’.
+For every value of ‘N’, help sam to print the corresponding N/2-dimensional forest.
+Example:
+
+Input:  ‘N’ = 3
+Output: 
+* 
+* *
+* * *
+
+Solution :
+
+public class Solution {
+    public static void nForest(int n) {
+
+        // Iterate over each row
+        for (int i = 1; i <= n; i++) {
+            
+            // Print 'i' number of "* " for the current row
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+
+            // Move to the next line after printing all asterisks in the current row
+            System.out.println();
+        }
+    }
+}
