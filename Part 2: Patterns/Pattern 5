@@ -1,0 +1,42 @@
+Problem statement :
+Sam is planting trees on the upper half region (separated by the left diagonal) of the square shared field.
+For every value of ‘N’, print the field if the trees are represented by ‘*’.
+Example:
+
+Input: ‘N’ = 3
+
+Output: 
+* * *
+* *
+*
+
+
+Solution 1: In case i=0
+
+public class Solution {
+    public static void seeding(int n) {
+        for (int i=0; i<n; i++){
+            for (int j=0; j<n-i; j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+Solution 2: In case i=1
+
+public class Solution {
+    public static void seeding(int n) {
+        
+        for (int i = 1; i <= n; i++) {
+
+            for (int j = 1; j <= n - i + 1; j++) {
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+    }
+}
+}
