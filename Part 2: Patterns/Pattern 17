@@ -1,0 +1,47 @@
+Problem statement
+Sam is curious about Alpha-Hills, so he decided to create Alpha-Hills of different sizes.
+An Alpha-hill is represented by a triangle, where alphabets are filled in palindromic order.
+
+For every value of ‘N’, help sam to return the corresponding Alpha-Hill.
+Example:
+
+Input: ‘N’ = 3
+
+Output: 
+    A
+  A B A
+A B C B A
+
+
+
+
+
+
+public class Solution {
+    public static void alphaHill(int n) {
+        
+        for (int i = 1; i <= n; i++) {
+
+            // 1. Fixed spaces: Multiplied by 2 for correct alignment
+            for (int s = 1; s <= 2 * (n - i); s++) {
+                System.out.print(" ");
+            }
+
+            // 2. Fixed character tracking: Declare it OUTSIDE the inner loop
+            char c = 'A';
+            
+            for (int j = 1; j <= 2 * i - 1; j++) {
+                System.out.print(c + " ");
+                
+                // 3. Palindromic logic: Increase until the middle column, then decrease
+                if (j < i) {
+                    c++; // Going up: A -> B -> C
+                } else {
+                    c--; // Going down: C -> B -> A
+                }
+            }
+
+            System.out.println();
+        }
+    }
+}
